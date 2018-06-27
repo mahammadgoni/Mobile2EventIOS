@@ -17,19 +17,19 @@ public class IOSsetUp {
     String home = System.getProperty("user.dir");
     
     
-	String DeviceName = "iPhone 5";
+	String DeviceName = "iPhone 8";
 	
-//	String UDID = "38A480C3-A32F-4F9A-9474-F22B3A96A0A5";
+	String UDID = "044F22C8-BD4F-4EF8-B38B-FED18F73B4B6";
 	
-	String UDID = "fb5900c501cd3effb3999fa8999f78045b07d9fe";
+//	String UDID = "fb5900c501cd3effb3999fa8999f78045b07d9fe";
 	
-	String PlatformVersion =  "10.3";
+	String PlatformVersion =  "11.0";
 
-//	String appPath =  "/App/event2mobile.app";
+	String appPath =  "/App/event2mobile.app";
 	
 //	String appPath =  "/App/e2m.ipa";
 	
-	String appPath =  "/App/Local Tackle Shop.app";
+//	String appPath =  "/App/Local Tackle Shop.app";
 	
 	String appPackageName =  "";
 	
@@ -79,6 +79,8 @@ public class IOSsetUp {
 		
 		capabilities.setCapability("xcodeSigningId", "iPhone Developer");
 		
+//		Need to change this xcConfig Address
+		
 		capabilities.setCapability("xcodeConfigFile","/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/Configurations/ProjectSettings.xcconfig");
 
 //		capabilities.setCapability("appPackage", appPackageName);
@@ -87,7 +89,7 @@ public class IOSsetUp {
 		
 //		capabilities.setCapability("noResetValue", "false");
 
-		driver = new IOSDriver (new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+		driver = new IOSDriver (new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 
@@ -98,18 +100,14 @@ public class IOSsetUp {
 		
 		System.out.println("Installing the Application ");
 		
-		String apkPath =  "";
-		
-		driver.installApp(home+apkPath);
+		driver.installApp(home+appPath);
 		
 		System.out.println("Successfully Installed the Application ");
 		
 	}
 	
 	protected void uninstallApp() throws IOException{
-		
-		String appPackageName = "";
-		
+				
 		System.out.println("Uninstalling the Application the Application");
 		
 		driver.removeApp(appPackageName);
@@ -126,18 +124,11 @@ public class IOSsetUp {
 		
 		System.out.println("Going Back to Home");
 
-//		driver.pressKeyCode(AndroidKeyCode.BACK);
-
-//		driver.pressKeyCode(AndroidKeyCode.HOME);
 	}
 
 	protected void openTheApp() throws IOException {
 			
 		System.out.println("Opening the App Again to Check the Changed Password");
-		
-		String appPackageName =  "";
-		
-		String activityName =  "";
 
 		DesiredCapabilities caps = new DesiredCapabilities();
 
