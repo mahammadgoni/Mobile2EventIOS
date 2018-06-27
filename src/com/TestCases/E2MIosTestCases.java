@@ -43,6 +43,28 @@ public class E2MIosTestCases extends IOSsetUp{
 		
 	}
 	
+	@Test(priority = 2)
+	public void forgotPasswordTest() throws InterruptedException, IOException{
+				
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Forgot Password Test");
+		
+		new LoginPage(driver).forgotPassword("brucewills@yopmail.com", "#e2m321");
+		
+	}
+	
+	@Test(priority = 3)
+	public void changePasswordTest() throws InterruptedException, IOException{
+				
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Change Password Test");
+		
+		new LoginPage(driver).changePassword("brucewills@yopmail.com", "#e2m321", "#e2m321");
+		
+	}
+	
 	
 	
 
