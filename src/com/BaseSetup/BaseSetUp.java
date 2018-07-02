@@ -13,22 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BaseSetUp {
 	
   protected WebDriver driver;
-
-	By emailId = By.id("ws.e2m.main:id/et_email");
-	
-	By pass = By.id("ws.e2m.main:id/et_password");
-	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
-	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
-	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
-	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
-	
-	By menu = By.id("ws.e2m.main:id/btn_home");
-  
-  
+ 
+ 
   
     public BaseSetUp(WebDriver driver) {
         this.driver = driver;
@@ -44,50 +30,6 @@ public class BaseSetUp {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
     
-//	Common Login Method
-	
-	public void commonActivity(String userName,String password) throws InterruptedException{
-		
-		System.out.println("Clicking on Your Email ");
-
-		waitForClickabilityOf(emailId);
-
-		driver.findElement(emailId).clear();
-
-		System.out.println("Entering the Email  :" + userName);
-
-		driver.findElement(emailId).sendKeys(userName);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn1);
-
-		driver.findElement(proceedBtn1).click();
-		
-		Thread.sleep(2000);
-
-		System.out.println("Entering the Pin  :" + password);
-
-		waitForClickabilityOf(pass);
-		
-		driver.findElement(pass).clear();
-
-		driver.findElement(pass).sendKeys(password);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn2);
-
-		driver.findElement(proceedBtn2).click();
-		
-		Thread.sleep(2000);
-		
-		
-	}
     
 
     public void scrollPageUp() {

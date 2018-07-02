@@ -5,42 +5,43 @@ import org.openqa.selenium.WebDriver;
 import com.BaseSetup.BaseSetUp;
 
 public class LoginPage extends BaseSetUp{
+
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By logoutBtn = By.xpath("//*[@name='log out']");
 	
-	By profile = By.xpath("//android.widget.ImageView[@content-desc='Me']");
+	By emailId = By.xpath("//*[@type='XCUIElementTypeTextField']");
 	
-	By logoutBtn = By.xpath("//*[@text='Log out']");
+	By pass = By.xpath("//*[@value='Password']");
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By proceedBtn1 = By.xpath("//*[@name='Double tap to Proceed']");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By proceedBtn2 = By.xpath("//*[@name='Double tap to Proceed']");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By forgotPassBtn = By.xpath("//*[@name='Double tap to Forgot password?']");
+		
+	By menu = By.xpath("//*[@name='Menu']");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By submitBtn = By.xpath("//*[@name='Submit']");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
-	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By oKBtn = By.xpath("//*[@name='OK']");
 		
 //	Change Password Elements
 	
-	By clickOnMe = By.xpath("//android.widget.ImageView[@content-desc='Me']");
+	By clickOnMe = By.xpath("//*[@name='Me']");
 	
-	By myProfile = By.xpath("//android.widget.ImageView[@content-desc='My Profile']");
+	By myProfile = By.xpath("//*[@name='My Profile']");
 	
-	By changePassword = By.id("ws.e2m.main:id/tv_chang_pass");
+	By changePassword = By.xpath("//*[@name='Change password']");
 	
-	By oldPassword = By.xpath("//*[@bounds='[66,492][696,591]']");
+	By oldPassword = By.xpath("//*[@name='Enter Old password']");
 	
-	By newPassword = By.xpath("//*[@bounds='[66,723][696,822]']");
+	By newPassword = By.xpath("//*[@name='Enter New Password']");
 	
-	By confirmPassword = By.xpath("//*[@bounds='[66,954][696,1053]']");
+	By confirmPassword = By.xpath("//*[@name='Enter Confirm Password']");
 	
-	By successMessage = By.xpath("//*[@bounds='[147,528][933,918]']");
+	By successMessage = By.xpath("//*[@name='Success - you've changed your password']");
 	
-	By saveBtn = By.xpath("//android.widget.Button[@content-desc='Save']");
+	By saveBtn = By.xpath("//*[@name='Save']");
 	
 //	Verify Home Page Elements 
 	
@@ -49,6 +50,51 @@ public class LoginPage extends BaseSetUp{
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
+		
+	}
+	
+//	Common Login Method
+	
+	public void commonActivity(String userName,String password) throws InterruptedException{
+		
+		System.out.println("Clicking on Your Email ");
+
+		waitForClickabilityOf(emailId);
+
+		driver.findElement(emailId).clear();
+
+		System.out.println("Entering the Email  :" + userName);
+
+		driver.findElement(emailId).sendKeys(userName);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Proceed Button ");
+
+		waitForClickabilityOf(proceedBtn1);
+
+		driver.findElement(proceedBtn1).click();
+		
+		Thread.sleep(2000);
+
+		System.out.println("Entering the Pin  :" + password);
+
+		waitForClickabilityOf(pass);
+		
+		driver.findElement(pass).clear();
+
+		driver.findElement(pass).sendKeys(password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Proceed Button ");
+
+		waitForClickabilityOf(proceedBtn2);
+
+		driver.findElement(proceedBtn2).click();
+		
+		Thread.sleep(2000);
+		
 		
 	}
 	
