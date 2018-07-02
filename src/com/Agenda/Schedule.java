@@ -10,59 +10,61 @@ import io.appium.java_client.android.AndroidKeyCode;
 
 public class Schedule extends BaseSetUp{
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.xpath("//*[@type='XCUIElementTypeTextField']");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.xpath("//*[@value='Password']");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.xpath("//*[@name='Double tap to Proceed']");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.xpath("//*[@name='Double tap to Proceed']");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.xpath("//*[@name='Double tap to Forgot password?']");
+		
+	By menu = By.xpath("//*[@name='Menu']");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
-	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By submitBtn = By.xpath("//*[@name='Submit']");
 	
 //	Schedule Elements
 	
-	By clickOnAgenda = By.xpath("//android.widget.ImageView[@content-desc='Agenda']");
+	By clickOnAgenda = By.xpath("//*[@name='Agenda']");
 	
-	By clickOnSchedule = By.xpath("//*[@text='Schedule']");
+	By clickOnSchedule = By.xpath("//*[@name='Schedule']");
 	
-	By timeTab = By.xpath("//*[@text='Time']");
+	By timeTab = By.xpath("//*[@name='Time']");
 	
-	By session1st = By.xpath("//*[@bounds='[0,702][1080,914]']");
+	By nextDate = By.xpath("//*[@name='Double tap for next']");
 	
-	By bookmark = By.xpath("//*[@content-desc='Bookmark']");
+	By session1st = By.xpath("//*[@type='XCUIElementTypeCell']");
 	
-	By addToCalender = By.xpath("//*[@text='Add To Calendar']");
+	By bookmark = By.xpath("//*[@name='Bookmark']");
 	
-	By rate = By.xpath("//*[@text='Rate']");
+	By addToCalender = By.xpath("//*[@name='Add To Calendar']");
 	
-	By cancleRate = By.id("ws.e2m.main:id/btn_home");
+	By rate = By.xpath("//*[@name='Rate']");
 	
-	By takeNotes = By.xpath("//*[@text='Take Notes']");
+	By cancleRate = By.xpath("//*[@name='Double tap to close']");
 	
-	By addNote = By.id("ws.e2m.main:id/et_addnote_detail");
+	By takeNotes = By.xpath("//*[@name='Take Notes']");
 	
-	By addNotePlusBtn = By.id("ws.e2m.main:id/btn_right");
+	By addNote = By.xpath("//*[@name='Enter Note']");
 	
-	By saveNote = By.id("ws.e2m.main:id/btn_right");
+	By addNotePlusBtn = By.xpath("//*[@name='Double tap to Add Note']");
 	
-	By askAQuestion = By.xpath("//*[@text='Ask A Question']");
+	By saveNote = By.xpath("//*[@name='Save']");
+	
+	By askAQuestion = By.xpath("//*[@name='Ask A Question']");
 	
 	By addQuestion = By.id("ws.e2m.main:id/et_ask");
 	
 	By saveQuestion = By.id("ws.e2m.main:id/tv_ask");
 	
-	By vote = By.xpath("//*[@text='Vote']");
+	By vote = By.xpath("//*[@name='Vote']");
 	
 	By addToAgenda = By.xpath("//*[@text='Add To Agenda']");
 	
 	By speakersList = By.id("ws.e2m.main:id/speaker_list_view_title");
 	
-	By tracksTab = By.xpath("//*[@text='Tracks']");
+	By tracksTab = By.xpath("//*[@name='Tracks']");
 	
 	By liveMigration = By.xpath("//*[@text='Live Migration']");
 	
@@ -74,7 +76,7 @@ public class Schedule extends BaseSetUp{
 	
 	By bookmark1st = By.xpath("//*[@content-desc='Remove bookmark']");
 		
-	By myAgendaTab = By.xpath("//*[@text='My Agenda']");
+	By myAgendaTab = By.xpath("//*[@name='My Agenda']");
 	
 	By select1stAgendaSesn = By.xpath("//*[@bounds='[75,653][517,736]']");
 	
