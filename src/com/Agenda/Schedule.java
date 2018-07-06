@@ -34,13 +34,21 @@ public class Schedule extends BaseSetUp{
 	
 	By nextDate = By.xpath("//*[@name='Double tap for next']");
 	
-	By session1st = By.xpath("//*[@type='XCUIElementTypeCell']");
+	By session1st = By.xpath("//XCUIElementTypeCell[1]");
 	
 	By bookmark = By.xpath("//*[@name='Bookmark']");
 	
 	By addToCalender = By.xpath("//*[@name='Add To Calendar']");
 	
 	By rate = By.xpath("//*[@name='Rate']");
+	
+	By addRate = By.xpath("//XCUIElementTypeCell");
+	
+	By addComment = By.xpath("//*[@value='Comment']");
+	
+	By submitCmnt = By.xpath("//*[@name='Double tap to submit']");
+	
+	By okBtn = By.xpath("//*[@name='OK']");
 	
 	By cancleRate = By.xpath("//*[@name='Double tap to close']");
 	
@@ -54,15 +62,15 @@ public class Schedule extends BaseSetUp{
 	
 	By askAQuestion = By.xpath("//*[@name='Ask A Question']");
 	
-	By addQuestion = By.id("ws.e2m.main:id/et_ask");
+	By addQuestion = By.id("et_ask");
 	
-	By saveQuestion = By.id("ws.e2m.main:id/tv_ask");
+	By saveQuestion = By.id("tv_ask");
 	
 	By vote = By.xpath("//*[@name='Vote']");
 	
 	By addToAgenda = By.xpath("//*[@text='Add To Agenda']");
 	
-	By speakersList = By.id("ws.e2m.main:id/speaker_list_view_title");
+	By speakersList = By.id("speaker_list_view_title");
 	
 	By tracksTab = By.xpath("//*[@name='Tracks']");
 	
@@ -70,17 +78,35 @@ public class Schedule extends BaseSetUp{
 	
 	By platforms = By.xpath("//*[@text='Platforms']");
 	
-	By select1stTrackSesn = By.xpath("//*[@bounds='[0,558][1080,792]']");
+	By select1stTrackSesn = By.xpath("//XCUIElementTypeCell[1]");
 	
-	By select2ndTrackSesn = By.xpath("//*[@bounds='[0,795][1080,1029]']");
+	By select2ndTrackSesn = By.xpath("//XCUIElementTypeCell[2]");
 	
-	By bookmark1st = By.xpath("//*[@content-desc='Remove bookmark']");
+	By clickOnTrackSesn = By.xpath("//*[@type='XCUIElementTypeCell']");
+	
+	By bookmark1st = By.xpath("//*[@name='Bookmark']");
 		
 	By myAgendaTab = By.xpath("//*[@name='My Agenda']");
 	
-	By select1stAgendaSesn = By.xpath("//*[@bounds='[75,653][517,736]']");
+	By select1stAgendaSesn = By.xpath("/XCUIElementTypeCell[1]");
 	
-	By select2ndAgendaSesn = By.xpath("//*[@bounds='[75,1266][409,1349]']");
+	By select2ndAgendaSesn = By.xpath("/XCUIElementTypeCell[2]");
+	
+	By clickOnResource = By.xpath("//*[@name='Resources']");
+	
+	By clickOn1stResource = By.xpath("//XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]");
+	
+	By clickOn2ndResource = By.xpath("//XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]");
+	
+	By shareResource = By.xpath("//*[@name='Double tap to Share']");
+	
+	By addNoteToResouce = By.xpath("//*[@name='Double tap to Add Note']");
+	
+	By enterNote = By.xpath("//*[@name='Enter Note']");
+	
+	By submitNote = By.xpath("//*[@name='Submit']");
+	
+	By cancelBtn = By.xpath("//*[@name='Cancel']");
 	
 	
 

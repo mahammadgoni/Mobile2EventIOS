@@ -17,11 +17,11 @@ public class IOSsetUp {
     String home = System.getProperty("user.dir");
     
     
-	String DeviceName = "iPhone 8";
+	String DeviceName = "iPhone 5";
 	
-	String UDID = "044F22C8-BD4F-4EF8-B38B-FED18F73B4B6";
+	String UDID = "fb5900c501cd3effb3999fa8999f78045b07d9fe";
 	
-//	String UDID = "fb5900c501cd3effb3999fa8999f78045b07d9fe";
+//	String UDID = "044F22C8-BD4F-4EF8-B38B-FED18F73B4B6";
 	
 	String PlatformVersion =  "11.0";
 
@@ -65,15 +65,21 @@ public class IOSsetUp {
 		
 		capabilities.setCapability(MobileCapabilityType.APP, home+appPath);
 		
-		capabilities.setCapability("autoAcceptAlerts", "true");
+		capabilities.setCapability("noReset", true);
 		
-		capabilities.setCapability("autoDismissAlerts", "true");
+		capabilities.setCapability("wdaLaunchTimeout", 30000);
+		
+		capabilities.setCapability("autoAcceptAlerts", true);
+		
+		capabilities.setCapability("autoDismissAlerts", true);
 		
 		capabilities.setCapability("bundleId", "com.event2mobile.e2mbeta");
 		
-		capabilities.setCapability("showIOSLog", true);
+//		capabilities.setCapability("showIOSLog", true);
 		
-		capabilities.setCapability("showXcodeLog", true);
+//		capabilities.setCapability("showXcodeLog", true);
+		
+		capabilities.setCapability("clearSystemFiles", true);
 		
 		capabilities.setCapability("xcodeOrgId", "Md Goni");
 		
@@ -81,17 +87,19 @@ public class IOSsetUp {
 		
 //		Need to change this xcConfig Address
 		
-		capabilities.setCapability("xcodeConfigFile","/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/Configurations/ProjectSettings.xcconfig");
+//		capabilities.setCapability("xcodeConfigFile","/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/Configurations/ProjectSettings.xcconfig");
 
 //		capabilities.setCapability("appPackage", appPackageName);
 
 //		capabilities.setCapability("appActivity", activityName);
 		
 //		capabilities.setCapability("noResetValue", "false");
+		
+		capabilities.setCapability("startIWDP", true);
 
 		driver = new IOSDriver (new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
-		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 
 	}
 	
