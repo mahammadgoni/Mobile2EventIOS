@@ -9,7 +9,7 @@ public class LoginPage extends BaseSetUp{
 	
 	By logoutBtn = By.xpath("//*[@name='log out']");
 	
-	By emailId = By.xpath("//*[@type='XCUIElementTypeTextField']");
+	By emailId = By.xpath("//*[@value='Email address']");
 	
 	By pass = By.xpath("//*[@value='Password']");
 	
