@@ -102,7 +102,7 @@ public class LoginPage extends BaseSetUp{
 	
 	public LoginPage accountLogin(String userName,String password) throws InterruptedException{
 
-		commonActivity(userName, password);
+//		commonActivity(userName, password);
 
 		Thread.sleep(2000);
 		

@@ -19,25 +19,27 @@ public class Sponsors extends BaseSetUp{
 	
 //	Sponsors Elements
 	
-	By clickOnAgenda = By.xpath("//android.widget.ImageView[@content-desc='Agenda']");
+	By clickOnAgenda = By.xpath("//*[@name='Agenda']");
 	
-	By clickOnSponsors = By.xpath("//*[@text='Sponsors']");
+	By clickOnSponsors = By.xpath("//*[@name='Sponsors']");
 	
-	By clickOnType = By.xpath("//*[@text='Type']");
+	By clickOnType = By.xpath("//*[@name='Type']");
 	
-	By clickOnSaveToContact = By.xpath("//*[@content-desc='Save to contacts']");
+	By clickOnSaveToContact = By.xpath("//*[@name=\"Save to Contacts\"]");
 		
-	By sponsorsName = By.xpath("//android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
+	By sponsorsName = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]");
 	
-	By sponsorsTypeName = By.xpath("//android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
+	By sponsorsTypeName = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]");
 		
-	By sponsorsOneName = By.id("tv_exhibitor_company");
+	By sponsorsOneName = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]");
 	
-	By clickOnBookmark = By.xpath("//*[@content-desc='Add bookmark']");
+	By clickOnBookmark = By.xpath("//*[@name=\"Bookmark\"]");
 	
-	By clickOnWebsite = By.xpath("//*[@content-desc='Website']");
+	By clickOnWebsite = By.xpath("//*[@name=\"Website\"]");
 	
-	By sponsorsType = By.xpath("//*[@bounds='[237,462][826,511]']");
+	By cancelBtn = By.xpath("//*[@name='Cancel']");
+	
+	By oKBtn = By.xpath("//*[@name='OK']");
 	
 	
 
@@ -50,41 +52,41 @@ public class Sponsors extends BaseSetUp{
 	
 	public void commonActivity(String userName,String password) throws InterruptedException{
 		
-		System.out.println("Clicking on Your Email ");
-
-		waitForClickabilityOf(emailId);
-
-		driver.findElement(emailId).clear();
-
-		System.out.println("Entering the Email  :" + userName);
-
-		driver.findElement(emailId).sendKeys(userName);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn1);
-
-		driver.findElement(proceedBtn1).click();
-		
-		Thread.sleep(2000);
-
-		System.out.println("Entering the Pin  :" + password);
-
-		waitForClickabilityOf(pass);
-		
-		driver.findElement(pass).clear();
-
-		driver.findElement(pass).sendKeys(password);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn2);
-
-		driver.findElement(proceedBtn2).click();
+//		System.out.println("Clicking on Your Email ");
+//
+//		waitForClickabilityOf(emailId);
+//
+//		driver.findElement(emailId).clear();
+//
+//		System.out.println("Entering the Email  :" + userName);
+//
+//		driver.findElement(emailId).sendKeys(userName);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn1);
+//
+//		driver.findElement(proceedBtn1).click();
+//		
+//		Thread.sleep(2000);
+//
+//		System.out.println("Entering the Pin  :" + password);
+//
+//		waitForClickabilityOf(pass);
+//		
+//		driver.findElement(pass).clear();
+//
+//		driver.findElement(pass).sendKeys(password);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn2);
+//
+//		driver.findElement(proceedBtn2).click();
 		
 		Thread.sleep(2000);
 		
@@ -146,6 +148,20 @@ public class Sponsors extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		System.out.println("Clicking on OK Button");
+
+		waitForClickabilityOf(oKBtn);
+
+		driver.findElement(oKBtn).click();
+		
+		Thread.sleep(2000);
+		
+		waitForClickabilityOf(oKBtn);
+
+		driver.findElement(oKBtn).click();
+		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking on Bookmark Sponsors");
 
 		waitForClickabilityOf(clickOnBookmark);
@@ -167,6 +183,14 @@ public class Sponsors extends BaseSetUp{
 			Thread.sleep(2000);
 			
 			driver.navigate().back();
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Cancel Button");
+
+			waitForClickabilityOf(cancelBtn);
+
+			driver.findElement(cancelBtn).click();
 					
 		} catch (Exception e) {
 			
@@ -234,6 +258,20 @@ public class Sponsors extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		System.out.println("Clicking on OK Button");
+		
+		waitForClickabilityOf(oKBtn);
+
+		driver.findElement(oKBtn).click();
+		
+		Thread.sleep(2000);
+		
+		waitForClickabilityOf(oKBtn);
+
+		driver.findElement(oKBtn).click();
+		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking on Bookmark Sponsors");
 
 		waitForClickabilityOf(clickOnBookmark);
@@ -255,6 +293,12 @@ public class Sponsors extends BaseSetUp{
 		driver.navigate().back();
 	
 		Thread.sleep(2000);
+			
+		System.out.println("Clicking on Cancel Button");
+
+		waitForClickabilityOf(cancelBtn);
+
+		driver.findElement(cancelBtn).click();
 		
 		System.out.println("Exhibitor Name  : "+SpsnsOne1);
 		

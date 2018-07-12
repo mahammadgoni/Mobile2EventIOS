@@ -28,23 +28,27 @@ public class Exhibitors extends BaseSetUp{
 	
 	By clickOnExhibitor = By.xpath("//*[@name='Exhibitor']");
 	
-	By clickOnType = By.xpath("//*[@text='Type']");
+	By clickOnType = By.xpath("//*[@name='Type']");
 	
-	By clickOnSaveToContact = By.xpath("//*[@content-desc='Save to contacts']");
+	By oKBtn = By.xpath("//*[@name='OK']");
 	
-	By exhibitorOne = By.xpath("//android.view.View[2]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]");
+	By clickOnSaveToContact = By.xpath("//*[@name=\"Save to Contacts\"]");
 	
-	By exhibitorName = By.xpath("//android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
+	By exhibitorOne = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]");
 	
-	By exhibitorTypeName = By.xpath("//android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.view.View[3]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]");
+	By exhibitorName = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]");
 	
-	By exhibitorOneName = By.xpath("//android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
+	By exhibitorTypeName = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]");
 	
-	By clickOnBookmark = By.xpath("//*[@content-desc='Add bookmark']");
+	By exhibitorOneName = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]");
 	
-	By clickOnWebsite = By.xpath("//*[@content-desc='Website']");
+	By clickOnBookmark = By.xpath("//*[@name=\"Bookmark\"]");
 	
-	By exhibitorType = By.xpath("//*[@bounds='[237,462][826,511]']");
+	By clickOnWebsite = By.xpath("//*[@name=\"Website\"]");
+	
+	By cancelBtn = By.xpath("//*[@name='Cancel']");
+	
+
 	
 	
 
@@ -57,41 +61,41 @@ public class Exhibitors extends BaseSetUp{
 	
 	public void commonActivity(String userName,String password) throws InterruptedException{
 		
-		System.out.println("Clicking on Your Email ");
-
-		waitForClickabilityOf(emailId);
-
-		driver.findElement(emailId).clear();
-
-		System.out.println("Entering the Email  :" + userName);
-
-		driver.findElement(emailId).sendKeys(userName);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn1);
-
-		driver.findElement(proceedBtn1).click();
-		
-		Thread.sleep(2000);
-
-		System.out.println("Entering the Pin  :" + password);
-
-		waitForClickabilityOf(pass);
-		
-		driver.findElement(pass).clear();
-
-		driver.findElement(pass).sendKeys(password);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn2);
-
-		driver.findElement(proceedBtn2).click();
+//		System.out.println("Clicking on Your Email ");
+//
+//		waitForClickabilityOf(emailId);
+//
+//		driver.findElement(emailId).clear();
+//
+//		System.out.println("Entering the Email  :" + userName);
+//
+//		driver.findElement(emailId).sendKeys(userName);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn1);
+//
+//		driver.findElement(proceedBtn1).click();
+//		
+//		Thread.sleep(2000);
+//
+//		System.out.println("Entering the Pin  :" + password);
+//
+//		waitForClickabilityOf(pass);
+//		
+//		driver.findElement(pass).clear();
+//
+//		driver.findElement(pass).sendKeys(password);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn2);
+//
+//		driver.findElement(proceedBtn2).click();
 		
 		Thread.sleep(2000);
 		
@@ -153,6 +157,20 @@ public class Exhibitors extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		System.out.println("Clicking on OK Button");
+		
+		waitForClickabilityOf(oKBtn);
+
+		driver.findElement(oKBtn).click();
+		
+		Thread.sleep(2000);
+		
+		waitForClickabilityOf(oKBtn);
+
+		driver.findElement(oKBtn).click();
+		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking on Bookmark Exhibitor");
 
 		waitForClickabilityOf(clickOnBookmark);
@@ -174,6 +192,16 @@ public class Exhibitors extends BaseSetUp{
 			Thread.sleep(2000);
 			
 			driver.navigate().back();
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Cancel Button");
+
+			waitForClickabilityOf(cancelBtn);
+
+			driver.findElement(cancelBtn).click();
+			
+			Thread.sleep(2000);
 					
 		} catch (Exception e) {
 			
@@ -249,6 +277,20 @@ public class Exhibitors extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		System.out.println("Clicking on OK Button");
+		
+		waitForClickabilityOf(oKBtn);
+
+		driver.findElement(oKBtn).click();
+		
+		Thread.sleep(2000);
+		
+		waitForClickabilityOf(oKBtn);
+
+		driver.findElement(oKBtn).click();
+		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking on Bookmark Exhibitor");
 
 		waitForClickabilityOf(clickOnBookmark);
@@ -272,6 +314,14 @@ public class Exhibitors extends BaseSetUp{
 		Thread.sleep(2000);
 		
 		driver.navigate().back();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Cancel Button");
+
+		waitForClickabilityOf(cancelBtn);
+
+		driver.findElement(cancelBtn).click();
 	
 		Thread.sleep(2000);
 		
