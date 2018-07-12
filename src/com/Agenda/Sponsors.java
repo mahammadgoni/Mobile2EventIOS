@@ -15,7 +15,7 @@ public class Sponsors extends BaseSetUp{
 	
 	By proceedBtn2 = By.xpath("//*[@name='Double tap to Proceed']");
 			
-	By menu = By.xpath("//*[@name='Menu']");
+	By menu = By.xpath("//*[@name=\"Menu\"]");
 	
 //	Sponsors Elements
 	
