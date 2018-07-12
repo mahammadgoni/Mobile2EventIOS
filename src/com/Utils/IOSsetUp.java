@@ -17,11 +17,11 @@ public class IOSsetUp {
     String home = System.getProperty("user.dir");
     
     
-	String DeviceName = "iPhone 5";
+	String DeviceName = "iPhone 8";
 	
-	String UDID = "fb5900c501cd3effb3999fa8999f78045b07d9fe";
+//	String UDID = "fb5900c501cd3effb3999fa8999f78045b07d9fe";
 	
-//	String UDID = "044F22C8-BD4F-4EF8-B38B-FED18F73B4B6";
+	String UDID = "044F22C8-BD4F-4EF8-B38B-FED18F73B4B6";
 	
 	String PlatformVersion =  "11.0";
 
@@ -67,7 +67,7 @@ public class IOSsetUp {
 		
 		capabilities.setCapability("noReset", true);
 		
-		capabilities.setCapability("wdaLaunchTimeout", 30000);
+		capabilities.setCapability("wdaLaunchTimeout", 1000);
 		
 		capabilities.setCapability("autoAcceptAlerts", true);
 		
@@ -96,6 +96,8 @@ public class IOSsetUp {
 //		capabilities.setCapability("noResetValue", "false");
 		
 		capabilities.setCapability("startIWDP", true);
+		
+		capabilities.setCapability("newCommandTimeout", 60);
 
 		driver = new IOSDriver (new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 

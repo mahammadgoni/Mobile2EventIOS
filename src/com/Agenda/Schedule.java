@@ -36,7 +36,7 @@ public class Schedule extends BaseSetUp{
 	
 	By session1st = By.xpath("//XCUIElementTypeCell[1]");
 	
-	By bookmark = By.xpath("//*[@name='Bookmark']");
+	By bookmark = By.xpath("//*[@name=\"Bookmark\"]");
 	
 	By addToCalender = By.xpath("//*[@name='Add To Calendar']");
 	
@@ -74,9 +74,9 @@ public class Schedule extends BaseSetUp{
 	
 	By tracksTab = By.xpath("//*[@name='Tracks']");
 	
-	By liveMigration = By.xpath("//*[@text='Live Migration']");
+	By tracks1 = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]");
 	
-	By platforms = By.xpath("//*[@text='Platforms']");
+	By tracks2 = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[2]");
 	
 	By select1stTrackSesn = By.xpath("//XCUIElementTypeCell[1]");
 	
@@ -108,6 +108,8 @@ public class Schedule extends BaseSetUp{
 	
 	By cancelBtn = By.xpath("//*[@name='Cancel']");
 	
+	By doneBtn = By.xpath("//*[@name='Done']");
+	
 	
 
 	public Schedule(WebDriver driver) {
@@ -120,41 +122,41 @@ public class Schedule extends BaseSetUp{
 	
 	public void commonActivity(String userName,String password) throws InterruptedException{
 		
-		System.out.println("Clicking on Your Email ");
-
-		waitForClickabilityOf(emailId);
-
-		driver.findElement(emailId).clear();
-
-		System.out.println("Entering the Email  :" + userName);
-
-		driver.findElement(emailId).sendKeys(userName);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn1);
-
-		driver.findElement(proceedBtn1).click();
-		
-		Thread.sleep(2000);
-
-		System.out.println("Entering the Pin  :" + password);
-
-		waitForClickabilityOf(pass);
-		
-		driver.findElement(pass).clear();
-
-		driver.findElement(pass).sendKeys(password);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn2);
-
-		driver.findElement(proceedBtn2).click();
+//		System.out.println("Clicking on Your Email ");
+//
+//		waitForClickabilityOf(emailId);
+//
+//		driver.findElement(emailId).clear();
+//
+//		System.out.println("Entering the Email  :" + userName);
+//
+//		driver.findElement(emailId).sendKeys(userName);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn1);
+//
+//		driver.findElement(proceedBtn1).click();
+//		
+//		Thread.sleep(2000);
+//
+//		System.out.println("Entering the Pin  :" + password);
+//
+//		waitForClickabilityOf(pass);
+//		
+//		driver.findElement(pass).clear();
+//
+//		driver.findElement(pass).sendKeys(password);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn2);
+//
+//		driver.findElement(proceedBtn2).click();
 		
 		Thread.sleep(4000);
 		
@@ -352,56 +354,36 @@ public class Schedule extends BaseSetUp{
 
 		driver.findElement(tracksTab).click();
 		
-		if (Option.equals("Live")) {
+		if (Option.equals("Track1")) {
 						
 			Thread.sleep(2000);
 			
-			System.out.println("Clicking on Live Migration");
+			System.out.println("Clicking on First Track");
 
-			waitForClickabilityOf(liveMigration);
+			waitForClickabilityOf(tracks1);
 
-			driver.findElement(liveMigration).click();
+			driver.findElement(tracks1).click();
 			
 		} else {
 			
 			Thread.sleep(2000);
 			
-			System.out.println("Clicking on Platforms");
+			System.out.println("Clicking on Second Track");
 
-			waitForClickabilityOf(platforms);
+			waitForClickabilityOf(tracks2);
 
-			driver.findElement(platforms).click();
+			driver.findElement(tracks2).click();
 
 		}
 		
 		Thread.sleep(2000);
-		
-		boolean Bookmarked = driver.findElement(bookmark1st).isSelected();
-		
-//		System.out.println(Bookmarked);
-		
-		if (Bookmarked==true) {
 			
-			Thread.sleep(2000);
-			
-			System.out.println("Clicking on Session from Tracks Tab");
+		System.out.println("Clicking on Session from Tracks Tab");
 
-			waitForClickabilityOf(select2ndTrackSesn);
+		waitForClickabilityOf(select1stTrackSesn);
 
-			driver.findElement(select2ndTrackSesn).click();
-			
-		} else {
-			
-			Thread.sleep(2000);
-			
-			System.out.println("Clicking on Session from Tracks Tab");
-
-			waitForClickabilityOf(select1stTrackSesn);
-
-			driver.findElement(select1stTrackSesn).click();
-
-		}
-				
+		driver.findElement(select1stTrackSesn).click();
+	
 		Thread.sleep(2000);
 		
 		try {
@@ -413,6 +395,8 @@ public class Schedule extends BaseSetUp{
 			driver.findElement(bookmark).click();
 			
 		} catch (Exception e) {
+			
+			System.out.println("It's already Bookmarked");
 			
 		}
 				
@@ -426,11 +410,27 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		System.out.println("Clicking On Ok Button to Add");
+
+		waitForClickabilityOf(okBtn);
+
+		driver.findElement(okBtn).click();
+		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking On Rate");
 
 		waitForClickabilityOf(rate);
 
 		driver.findElement(rate).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Close Rate Option");
+
+		waitForClickabilityOf(cancleRate);
+
+		driver.findElement(cancleRate).click();
 		
 		Thread.sleep(2000);
 		
@@ -474,11 +474,11 @@ public class Schedule extends BaseSetUp{
 				
 				Thread.sleep(2000);
 
-				waitForClickabilityOf(saveNote);
+				waitForClickabilityOf(addNotePlusBtn);
 
-				driver.findElement(saveNote).clear();
+				driver.findElement(addNotePlusBtn).clear();
 				
-				driver.findElement(saveNote).sendKeys(Notes);
+				driver.findElement(addNotePlusBtn).sendKeys(Notes);
 
 			}
 			
@@ -522,6 +522,16 @@ public class Schedule extends BaseSetUp{
 
 		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
 		
+		try {
+			
+			waitForClickabilityOf(doneBtn);
+
+			driver.findElement(doneBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking On Ask Question");
@@ -550,7 +560,7 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking On Close Rate Option");
+		System.out.println("Clicking On Close Question Option");
 		
 		boolean CancleBtn = driver.findElement(cancleRate).isDisplayed();
 
@@ -608,6 +618,8 @@ public class Schedule extends BaseSetUp{
 			
 		} catch (Exception e) {
 			
+			System.out.println("It's already Bookmarked");
+			
 		}
 				
 		Thread.sleep(2000);
@@ -620,11 +632,27 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		System.out.println("Clicking On Ok Button to Add");
+
+		waitForClickabilityOf(okBtn);
+
+		driver.findElement(okBtn).click();
+		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking On Rate");
 
 		waitForClickabilityOf(rate);
 
 		driver.findElement(rate).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Close Rate Option");
+
+		waitForClickabilityOf(cancleRate);
+
+		driver.findElement(cancleRate).click();
 		
 		Thread.sleep(2000);
 		
@@ -668,11 +696,11 @@ public class Schedule extends BaseSetUp{
 				
 				Thread.sleep(2000);
 
-				waitForClickabilityOf(saveNote);
+				waitForClickabilityOf(addNotePlusBtn);
 
-				driver.findElement(saveNote).clear();
+				driver.findElement(addNotePlusBtn).clear();
 				
-				driver.findElement(saveNote).sendKeys(Notes);
+				driver.findElement(addNotePlusBtn).sendKeys(Notes);
 
 			}
 			
@@ -715,6 +743,16 @@ public class Schedule extends BaseSetUp{
 		System.out.println("Clicking Back Button");
 
 		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+		
+		try {
+			
+			waitForClickabilityOf(doneBtn);
+
+			driver.findElement(doneBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
 		
 		Thread.sleep(2000);
 		

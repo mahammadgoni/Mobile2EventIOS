@@ -16,7 +16,7 @@ public class Speakers extends BaseSetUp{
 	
 	By proceedBtn2 = By.xpath("//*[@name='Double tap to Proceed']");
 			
-	By menu = By.xpath("//*[@name='Menu']");
+	By menu = By.xpath("//*[@name=\"Menu\"]");
 	
 //	Speaker Elements
 	
@@ -45,42 +45,42 @@ public class Speakers extends BaseSetUp{
 	
 	public void commonActivity(String userName,String password) throws InterruptedException{
 		
-		System.out.println("Clicking on Your Email ");
-
-		waitForClickabilityOf(emailId);
-
-		driver.findElement(emailId).clear();
-
-		System.out.println("Entering the Email  :" + userName);
-
-		driver.findElement(emailId).sendKeys(userName);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn1);
-
-		driver.findElement(proceedBtn1).click();
-		
-		Thread.sleep(2000);
-
-		System.out.println("Entering the Pin  :" + password);
-
-		waitForClickabilityOf(pass);
-		
-		driver.findElement(pass).clear();
-
-		driver.findElement(pass).sendKeys(password);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn2);
-
-		driver.findElement(proceedBtn2).click();
-		
+//		System.out.println("Clicking on Your Email ");
+//
+//		waitForClickabilityOf(emailId);
+//
+//		driver.findElement(emailId).clear();
+//
+//		System.out.println("Entering the Email  :" + userName);
+//
+//		driver.findElement(emailId).sendKeys(userName);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn1);
+//
+//		driver.findElement(proceedBtn1).click();
+//		
+//		Thread.sleep(2000);
+//
+//		System.out.println("Entering the Pin  :" + password);
+//
+//		waitForClickabilityOf(pass);
+//		
+//		driver.findElement(pass).clear();
+//
+//		driver.findElement(pass).sendKeys(password);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn2);
+//
+//		driver.findElement(proceedBtn2).click();
+//		
 		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
