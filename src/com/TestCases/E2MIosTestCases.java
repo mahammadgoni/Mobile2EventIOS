@@ -11,6 +11,10 @@ import com.Agenda.Exhibitors;
 import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
+import com.Agenda.Survey;
+import com.Live.Attendees;
+import com.Live.OneToOneMessage;
+import com.Live.SocialWall;
 import com.Login.LoginPage;
 import com.Utils.IOSsetUp;
 
@@ -156,6 +160,89 @@ public class E2MIosTestCases extends IOSsetUp{
 		System.out.println("Executing : Sponsor Type Test");
 		
 		new Sponsors(driver).sponsorsType("brucewills@yopmail.com", "#e2m321");
+		
+	}
+	
+	@Test(priority = 12)
+	public void dropdownPollsTest() throws InterruptedException, IOException{
+				
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Drop Down Polls/Survey Test");
+		
+		new Survey(driver).surveyDropdownPoll("brucewills@yopmail.com", "#e2m321");
+		
+	}
+	
+	
+	@Test(priority = 13)
+	public void freeTextPollsTest() throws InterruptedException, IOException{
+		
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Free Text Polls/Survey Test");
+		
+		new Survey(driver).surveyFreeTextPoll("brucewills@yopmail.com", "#e2m321");
+		
+	}
+	
+	
+	@Test(priority = 14)
+	public void multiplePollsTest() throws InterruptedException, IOException{
+		
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Multiple Polls/Survey Test");
+		
+		new Survey(driver).surveyMultiplePoll("brucewills@yopmail.com", "#e2m321");
+		
+	}
+	
+	
+	@Test(priority = 15)
+	public void singlePollsTest() throws InterruptedException, IOException{
+		
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Single Polls/Survey Test");
+		
+		new Survey(driver).surveySinglePoll("brucewills@yopmail.com", "#e2m321");
+		
+	}
+	
+	@Test(priority = 16)
+	public void attendeeDetailsTest() throws InterruptedException, IOException{
+				
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Attendee Details Test");
+		
+		new Attendees(driver).attendeeDetails("brucewills@yopmail.com", "#e2m321", "One");
+		
+	}
+	
+	@Test(priority = 17)
+	public void socialWallTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Social Wall Posting Test");
+		
+		new SocialWall(driver).socialWall("brucewills@yopmail.com","e2m321", "This is Automation IOS Testing Comment");
+		
+		
+	}
+	
+	@Test(priority = 18)
+	public void oneToOneMsgTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : One To One Message Test");
+		
+		new OneToOneMessage(driver).oneToOneMsg("brucewills@yopmail.com","e2m321", "We will meet soon");
+		
+		
 		
 	}
 	
