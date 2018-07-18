@@ -13,6 +13,7 @@ import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
 import com.Live.Attendees;
+import com.Live.OneToOneMessage;
 import com.Live.SocialWall;
 import com.Login.LoginPage;
 import com.Utils.IOSsetUp;
@@ -228,6 +229,19 @@ public class E2MIosTestCases extends IOSsetUp{
 		System.out.println("Executing : Social Wall Posting Test");
 		
 		new SocialWall(driver).socialWall("brucewills@yopmail.com","e2m321", "This is Automation IOS Testing Comment");
+		
+		
+	}
+	
+	@Test(priority = 18)
+	public void oneToOneMsgTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : One To One Message Test");
+		
+		new OneToOneMessage(driver).oneToOneMsg("brucewills@yopmail.com","e2m321", "We will meet soon");
+		
 		
 		
 	}
