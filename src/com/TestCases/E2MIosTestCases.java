@@ -13,6 +13,8 @@ import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
 import com.Live.Attendees;
+import com.Live.EventQA;
+import com.Live.LeaderBoard;
 import com.Live.OneToOneMessage;
 import com.Live.SocialWall;
 import com.Login.LoginPage;
@@ -228,8 +230,7 @@ public class E2MIosTestCases extends IOSsetUp{
 		
 		System.out.println("Executing : Social Wall Posting Test");
 		
-		new SocialWall(driver).socialWall("brucewills@yopmail.com","e2m321", "This is Automation IOS Testing Comment");
-		
+		new SocialWall(driver).socialWall("brucewills@yopmail.com","e2m321", "This is Automation IOS Testing Comment");	
 		
 	}
 	
@@ -242,8 +243,28 @@ public class E2MIosTestCases extends IOSsetUp{
 		
 		new OneToOneMessage(driver).oneToOneMsg("brucewills@yopmail.com","e2m321", "We will meet soon");
 		
+	}	
+	
+	@Test(priority = 19)
+	public void leaderBoardTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
 		
+		System.out.println("Executing : Leader Board Test");
 		
+		new LeaderBoard(driver).leaderBoardDetails("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 20)
+	public void eventQATest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Event QA Test");
+		
+		new EventQA(driver).eventQA("brucewills@yopmail.com","e2m321","Is this Ios Automation?");
+					
 	}
 	
 	
