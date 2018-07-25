@@ -47,6 +47,10 @@ public class PlayCenter extends BaseSetUp{
 	
 	By tryBtn = By.xpath("//*[@name='Double tap to Try Again']");
 	
+	By scanQRCode = By.xpath("//*[@name='Double tap to Scan QR Code']");
+	
+	By startQR = By.xpath("//*[@name='Start!']");
+	
 	
 
 	public PlayCenter(WebDriver driver) {
@@ -235,9 +239,19 @@ public class PlayCenter extends BaseSetUp{
 
 		driver.findElement(clickOnProceed).click();
 		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Scan QR Code");
+
+		waitForClickabilityOf(scanQRCode);
+
+		driver.findElement(scanQRCode).click();
+		
+		Thread.sleep(2000);
+		
 //      Verifying Condition 
 		
-		boolean ModuleStatus = driver.findElement(progressStatus).isDisplayed();
+		boolean ModuleStatus = driver.findElement(startQR).isDisplayed();
 		
 		if (ModuleStatus==true) {
 			
@@ -283,9 +297,19 @@ public class PlayCenter extends BaseSetUp{
 
 		driver.findElement(clickOnProceed).click();
 		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Scan QR Code");
+
+		waitForClickabilityOf(scanQRCode);
+
+		driver.findElement(scanQRCode).click();
+		
+		Thread.sleep(2000);
+		
 //      Verifying Condition 
 		
-		boolean ModuleStatus = driver.findElement(progressStatus).isDisplayed();
+		boolean ModuleStatus = driver.findElement(startQR).isDisplayed();
 		
 		if (ModuleStatus==true) {
 			
