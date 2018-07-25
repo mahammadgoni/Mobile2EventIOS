@@ -13,9 +13,16 @@ import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
 import com.Live.Attendees;
+import com.Live.EventQA;
+import com.Live.LeaderBoard;
 import com.Live.OneToOneMessage;
+import com.Live.PlayCenter;
 import com.Live.SocialWall;
 import com.Login.LoginPage;
+import com.Me.Bookmarks;
+import com.Me.Logout;
+import com.Me.MyProfile;
+import com.Me.Notes;
 import com.Utils.IOSsetUp;
 
 public class E2MIosTestCases extends IOSsetUp{
@@ -228,8 +235,7 @@ public class E2MIosTestCases extends IOSsetUp{
 		
 		System.out.println("Executing : Social Wall Posting Test");
 		
-		new SocialWall(driver).socialWall("brucewills@yopmail.com","e2m321", "This is Automation IOS Testing Comment");
-		
+		new SocialWall(driver).socialWall("brucewills@yopmail.com","e2m321", "This is Automation IOS Testing Comment");	
 		
 	}
 	
@@ -242,8 +248,105 @@ public class E2MIosTestCases extends IOSsetUp{
 		
 		new OneToOneMessage(driver).oneToOneMsg("brucewills@yopmail.com","e2m321", "We will meet soon");
 		
+	}	
+	
+	@Test(priority = 19)
+	public void leaderBoardTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
 		
+		System.out.println("Executing : Leader Board Test");
 		
+		new LeaderBoard(driver).leaderBoardDetails("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 20)
+	public void eventQATest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Event QA Test");
+		
+		new EventQA(driver).eventQA("brucewills@yopmail.com","e2m321","Is this Ios Automation?");
+					
+	}
+	
+	@Test(priority = 21)
+	public void quizMapTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Quiz Map Test");
+		
+		new PlayCenter(driver).quizMap("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 22)
+	public void locationMapTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Location Map Test");
+		
+		new PlayCenter(driver).locationMap("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 23)
+	public void makingFriendMapTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Making Friend Map Test");
+		
+		new PlayCenter(driver).makingFriendMap("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 24)
+	public void bookmarkTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Bookmark Test");
+		
+		new Bookmarks(driver).bookmarked("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 25)
+	public void addNoteTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Add Note Test");
+		
+		new Notes(driver).addNote("brucewills@yopmail.com","e2m321","IOS Delivery Note");
+					
+	}
+	
+	@Test(priority = 26)
+	public void myProfileTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : My Profile Test");
+		
+		new MyProfile(driver).editMyProfile("brucewills@yopmail.com","e2m321", "Manager", "Spiders Inc", "8687657890", "IOS Description for My Profile");
+					
+	}
+	
+	@Test(priority = 27)
+	public void logoutTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : log Out Test");
+		
+		new Logout(driver).logoutCheck("brucewills@yopmail.com","e2m321");
+					
 	}
 	
 	
