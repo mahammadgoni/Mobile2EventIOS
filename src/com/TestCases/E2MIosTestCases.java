@@ -12,6 +12,8 @@ import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
+import com.Etc.LocationAndTiming;
+import com.Etc.Resources;
 import com.Live.Attendees;
 import com.Live.EventQA;
 import com.Live.LeaderBoard;
@@ -20,6 +22,7 @@ import com.Live.PlayCenter;
 import com.Live.SocialWall;
 import com.Login.LoginPage;
 import com.Me.Bookmarks;
+import com.Me.BusinessCard;
 import com.Me.Logout;
 import com.Me.MyProfile;
 import com.Me.Notes;
@@ -346,6 +349,39 @@ public class E2MIosTestCases extends IOSsetUp{
 		System.out.println("Executing : log Out Test");
 		
 		new Logout(driver).logoutCheck("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 28)
+	public void businessCardTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Business Card Verify Test");
+		
+		new BusinessCard(driver).businessCardVerify("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 29)
+	public void locationAndTimingTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Location And Timing Test");
+		
+		new LocationAndTiming(driver).locationAndTiming("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 30)
+	public void resourceTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Resource Test");
+		
+		new Resources(driver).resources("brucewills@yopmail.com","e2m321","This is Mac reporting through Automation");
 					
 	}
 	
