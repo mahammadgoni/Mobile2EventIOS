@@ -12,8 +12,13 @@ import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
+import com.Etc.AllEvents;
+import com.Etc.FloorMap;
+import com.Etc.Home;
 import com.Etc.LocationAndTiming;
 import com.Etc.Resources;
+import com.Etc.Settings;
+import com.Etc.UsefullInfo;
 import com.Live.Attendees;
 import com.Live.EventQA;
 import com.Live.LeaderBoard;
@@ -382,6 +387,83 @@ public class E2MIosTestCases extends IOSsetUp{
 		System.out.println("Executing : Resource Test");
 		
 		new Resources(driver).resources("brucewills@yopmail.com","e2m321","This is Mac reporting through Automation");
+					
+	}
+	
+	@Test(priority = 31)
+	public void usefullInfoTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Usefull Info Test");
+		
+		new UsefullInfo(driver).viweUsefulInfo("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 32)
+	public void viewFloorMapTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : View Floor Map Test");
+		
+		new FloorMap(driver).viewFloorMap("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 33)
+	public void wayFinderTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Way Finder Test");
+		
+		new FloorMap(driver).wayFinder("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 34)
+	public void aboutAppTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : About App Test");
+		
+		new Settings(driver).aboutApp("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 35)
+	public void refreshTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Refresh the App Test");
+		
+		new Settings(driver).refreshData("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 36)
+	public void homeTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Home Verify Test");
+		
+		new Home(driver).home("brucewills@yopmail.com","e2m321");
+					
+	}
+	
+	@Test(priority = 37)
+	public void allEventsTest() throws IOException, InterruptedException{
+
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : All Events Test");
+		
+		new AllEvents(driver).allEvents("brucewills@yopmail.com","e2m321");
 					
 	}
 	
