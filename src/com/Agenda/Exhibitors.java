@@ -26,7 +26,7 @@ public class Exhibitors extends BaseSetUp{
 	
 	By clickOnAgenda = By.xpath("//*[@name='Agenda']");
 	
-	By clickOnExhibitor = By.xpath("//*[@name='Exhibitor']");
+	By clickOnExhibitor = By.xpath("//*[@name='Exhibitors']");
 	
 	By clickOnType = By.xpath("//*[@name='Type']");
 	
@@ -47,6 +47,8 @@ public class Exhibitors extends BaseSetUp{
 	By clickOnWebsite = By.xpath("//*[@name=\"Website\"]");
 	
 	By cancelBtn = By.xpath("//*[@name='Cancel']");
+	
+	By backBtn = By.xpath("//*[@name='Back']");
 	
 
 	
@@ -97,7 +99,17 @@ public class Exhibitors extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 
@@ -191,7 +203,9 @@ public class Exhibitors extends BaseSetUp{
 			
 			Thread.sleep(2000);
 			
-			driver.navigate().back();
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
 			
 			Thread.sleep(2000);
 			
@@ -313,7 +327,9 @@ public class Exhibitors extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		driver.navigate().back();
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
 		
 		Thread.sleep(2000);
 		

@@ -67,7 +67,7 @@ public class IOSsetUp {
 		
 		capabilities.setCapability("noReset", true);
 		
-		capabilities.setCapability("wdaLaunchTimeout", 1000);
+		capabilities.setCapability("wdaLaunchTimeout", 120);
 		
 		capabilities.setCapability("autoAcceptAlerts", true);
 		
@@ -151,19 +151,7 @@ public class IOSsetUp {
 	public void scrollDown(){
 		
 		System.out.println("Scrolling Down");
-		
-		try {
 			
-//			driver.pressKeyCode(AndroidKeyCode.ACTION_DOWN);
-			
-//			driver.pressKeyCode(AndroidKeyCode.KEYCODE_PAGE_UP);
-			
-//			driver.pressKeyCode(AndroidKeyCode.KEYCODE_PAGE_DOWN);
-			
-		} catch (Exception e) {
-			
-		}
-		
 
 	}
 	

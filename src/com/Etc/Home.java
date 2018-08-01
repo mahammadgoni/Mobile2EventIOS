@@ -26,6 +26,8 @@ public class Home extends BaseSetUp{
 	
 	By homeTitle = By.xpath("//*[@name='Home']");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 	
 
 	public Home(WebDriver driver) {
@@ -73,7 +75,17 @@ public class Home extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 				
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

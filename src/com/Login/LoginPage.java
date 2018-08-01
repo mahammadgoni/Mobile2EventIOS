@@ -127,57 +127,57 @@ public class LoginPage extends BaseSetUp{
 	
 	public LoginPage forgotPassword(String userName,String password) throws InterruptedException{
 		
-		System.out.println("Clicking on Your Email ");
-
-		waitForClickabilityOf(emailId);
-
-		driver.findElement(emailId).clear();
-
-		System.out.println("Entering the Email  :" + userName);
-
-		driver.findElement(emailId).sendKeys(userName);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn1);
-
-		driver.findElement(proceedBtn1).click();
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Forgot Password Button ");
-
-		waitForClickabilityOf(forgotPassBtn);
-
-		driver.findElement(forgotPassBtn).click();
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Submit Button ");
-
-		waitForClickabilityOf(submitBtn);
-
-		driver.findElement(submitBtn).click();
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Entering the New Pin  :" + password);
-
-		waitForClickabilityOf(pass);
-		
-		driver.findElement(pass).clear();
-
-		driver.findElement(pass).sendKeys(password);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn2);
-
-		driver.findElement(proceedBtn2).click();
+//		System.out.println("Clicking on Your Email ");
+//
+//		waitForClickabilityOf(emailId);
+//
+//		driver.findElement(emailId).clear();
+//
+//		System.out.println("Entering the Email  :" + userName);
+//
+//		driver.findElement(emailId).sendKeys(userName);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn1);
+//
+//		driver.findElement(proceedBtn1).click();
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Forgot Password Button ");
+//
+//		waitForClickabilityOf(forgotPassBtn);
+//
+//		driver.findElement(forgotPassBtn).click();
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Submit Button ");
+//
+//		waitForClickabilityOf(submitBtn);
+//
+//		driver.findElement(submitBtn).click();
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Entering the New Pin  :" + password);
+//
+//		waitForClickabilityOf(pass);
+//		
+//		driver.findElement(pass).clear();
+//
+//		driver.findElement(pass).sendKeys(password);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn2);
+//
+//		driver.findElement(proceedBtn2).click();
 		
 		Thread.sleep(2000);
 		
@@ -203,7 +203,7 @@ public class LoginPage extends BaseSetUp{
 	
 	public LoginPage changePassword(String userName,String password,String NewPassword) throws InterruptedException{
 		
-		commonActivity(userName, password);
+//		commonActivity(userName, password);
 		
 		Thread.sleep(4000);
 		
@@ -298,7 +298,7 @@ public class LoginPage extends BaseSetUp{
 	
 	public LoginPage homePageVerify(String userName,String password) throws InterruptedException{
 		
-		commonActivity(userName, password);
+//		commonActivity(userName, password);
 		
 		Thread.sleep(4000);
 		

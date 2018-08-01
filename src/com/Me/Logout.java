@@ -26,6 +26,8 @@ public class Logout extends BaseSetUp{
 	
 	By logoutBtn = By.xpath("//*[@name='Log Out']");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 
 	public Logout(WebDriver driver) {
 		super(driver);
@@ -72,7 +74,17 @@ public class Logout extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

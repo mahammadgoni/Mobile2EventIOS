@@ -49,6 +49,8 @@ public class Attendees extends BaseSetUp{
 	
 	By tagTab = By.xpath("//*[@name=\"Tag\"]");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 	
 	
 	
@@ -98,7 +100,17 @@ public class Attendees extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

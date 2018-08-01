@@ -10,7 +10,7 @@ public class Speakers extends BaseSetUp{
 	
 	By emailId = By.xpath("//*[@type='XCUIElementTypeTextField']");
 	
-	By pass = By.xpath("//*[@value='Password']");
+	By pass = By.xpath("//*[@name='Password']");
 	
 	By proceedBtn1 = By.xpath("//*[@name='Double tap to Proceed']");
 	
@@ -30,7 +30,9 @@ public class Speakers extends BaseSetUp{
 	
 	By speakerThree = By.xpath("//XCUIElementTypeCell[3]/XCUIElementTypeStaticText");
 	
-	By speakerName = By.id("tv_speaker_name");
+	By speakerName = By.xpath("//XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]");
+	
+	By backBtn = By.xpath("//*[@name='Back']");
 
 	
 	
@@ -81,6 +83,16 @@ public class Speakers extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 //		
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
 		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");

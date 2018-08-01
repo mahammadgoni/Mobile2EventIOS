@@ -25,6 +25,9 @@ public class AllEvents extends BaseSetUp{
 	
 	By selectEventTitle = By.xpath("//*[@name='Please select an event']");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
+	
 	
 
 	public AllEvents(WebDriver driver) {
@@ -73,7 +76,17 @@ public class AllEvents extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 				
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

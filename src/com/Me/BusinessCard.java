@@ -27,6 +27,8 @@ public class BusinessCard extends BaseSetUp{
 	
 	By businessCardImage = By.xpath("//XCUIElementTypeCell/XCUIElementTypeImage");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 	
 
 	public BusinessCard(WebDriver driver) {
@@ -75,7 +77,17 @@ public class BusinessCard extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

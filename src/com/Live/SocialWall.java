@@ -32,6 +32,8 @@ public class SocialWall extends BaseSetUp{
 	
 	By postedComment = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 
 	public SocialWall(WebDriver driver) {
 		super(driver);
@@ -42,41 +44,41 @@ public class SocialWall extends BaseSetUp{
 	
 	public void Login(String userName,String password) throws InterruptedException{
 		
-		System.out.println("Clicking on Your Email ");
-
-		waitForClickabilityOf(emailId);
-
-		driver.findElement(emailId).clear();
-
-		System.out.println("Entering the Email  :" + userName);
-
-		driver.findElement(emailId).sendKeys(userName);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn1);
-
-		driver.findElement(proceedBtn1).click();
-		
-		Thread.sleep(2000);
-
-		System.out.println("Entering the Pin  :" + password);
-
-		waitForClickabilityOf(pass);
-		
-		driver.findElement(pass).clear();
-
-		driver.findElement(pass).sendKeys(password);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn2);
-
-		driver.findElement(proceedBtn2).click();
+//		System.out.println("Clicking on Your Email ");
+//
+//		waitForClickabilityOf(emailId);
+//
+//		driver.findElement(emailId).clear();
+//
+//		System.out.println("Entering the Email  :" + userName);
+//
+//		driver.findElement(emailId).sendKeys(userName);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn1);
+//
+//		driver.findElement(proceedBtn1).click();
+//		
+//		Thread.sleep(2000);
+//
+//		System.out.println("Entering the Pin  :" + password);
+//
+//		waitForClickabilityOf(pass);
+//		
+//		driver.findElement(pass).clear();
+//
+//		driver.findElement(pass).sendKeys(password);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn2);
+//
+//		driver.findElement(proceedBtn2).click();
 		
 	}
 	
