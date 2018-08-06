@@ -32,6 +32,8 @@ public class OneToOneMessage extends BaseSetUp{
 	
 	By sendBtn = By.xpath("//*[@name='Double tap to send your message']");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 	
 
 	public OneToOneMessage(WebDriver driver) {
@@ -79,7 +81,17 @@ public class OneToOneMessage extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

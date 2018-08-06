@@ -30,6 +30,8 @@ public class EventQA extends BaseSetUp{
 	
 	By okBtn = By.xpath("//*[@name='OK']");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 
 	public EventQA(WebDriver driver) {
 		super(driver);
@@ -76,7 +78,17 @@ public class EventQA extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

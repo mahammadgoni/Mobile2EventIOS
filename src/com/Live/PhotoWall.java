@@ -48,7 +48,7 @@ public class PhotoWall extends BaseSetUp{
 	
 	By listView = By.xpath("//*[@content-desc='List view']");
 	
-	By justNow = By.xpath("//*[@text='Just now']");
+	By justNow = By.xpath("//*[@name='Just now']");
 	
 	By likeImage = By.xpath("//*[@content-desc='Like']");
 	
@@ -57,6 +57,8 @@ public class PhotoWall extends BaseSetUp{
 	By addComments = By.id("ed_add_comments");
 	
 	By postComment = By.id("btn_send");
+	
+	By backBtn = By.xpath("//*[@name='Back']");
 	
 	
 	
@@ -70,43 +72,53 @@ public class PhotoWall extends BaseSetUp{
 	
 	public void commonActivity(String userName,String password) throws InterruptedException{
 		
-		System.out.println("Clicking on Your Email ");
-
-		waitForClickabilityOf(emailId);
-
-		driver.findElement(emailId).clear();
-
-		System.out.println("Entering the Email  :" + userName);
-
-		driver.findElement(emailId).sendKeys(userName);
+//		System.out.println("Clicking on Your Email ");
+//
+//		waitForClickabilityOf(emailId);
+//
+//		driver.findElement(emailId).clear();
+//
+//		System.out.println("Entering the Email  :" + userName);
+//
+//		driver.findElement(emailId).sendKeys(userName);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn1);
+//
+//		driver.findElement(proceedBtn1).click();
+//		
+//		Thread.sleep(2000);
+//
+//		System.out.println("Entering the Pin  :" + password);
+//
+//		waitForClickabilityOf(pass);
+//		
+//		driver.findElement(pass).clear();
+//
+//		driver.findElement(pass).sendKeys(password);
+//		
+//		Thread.sleep(2000);
+//		
+//		System.out.println("Clicking on Proceed Button ");
+//
+//		waitForClickabilityOf(proceedBtn2);
+//
+//		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
 		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn1);
-
-		driver.findElement(proceedBtn1).click();
-		
-		Thread.sleep(2000);
-
-		System.out.println("Entering the Pin  :" + password);
-
-		waitForClickabilityOf(pass);
-		
-		driver.findElement(pass).clear();
-
-		driver.findElement(pass).sendKeys(password);
-		
-		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Proceed Button ");
-
-		waitForClickabilityOf(proceedBtn2);
-
-		driver.findElement(proceedBtn2).click();
-		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

@@ -43,6 +43,8 @@ public class LeaderBoard extends BaseSetUp{
 	
 	By activityName2 = By.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[2]");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 
 	public LeaderBoard(WebDriver driver) {
 		super(driver);
@@ -89,7 +91,17 @@ public class LeaderBoard extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

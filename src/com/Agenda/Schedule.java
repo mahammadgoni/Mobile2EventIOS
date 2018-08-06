@@ -5,9 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 import com.BaseSetup.BaseSetUp;
 
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidKeyCode;
-
 public class Schedule extends BaseSetUp{
 	
 	By emailId = By.xpath("//*[@type='XCUIElementTypeTextField']");
@@ -44,7 +41,7 @@ public class Schedule extends BaseSetUp{
 	
 	By addRate = By.xpath("//XCUIElementTypeCell");
 	
-	By addComment = By.xpath("//*[@value='Comment']");
+	By addComment = By.xpath("//*[@Name='Comment']");
 	
 	By submitCmnt = By.xpath("//*[@name='Double tap to submit']");
 	
@@ -54,7 +51,7 @@ public class Schedule extends BaseSetUp{
 	
 	By takeNotes = By.xpath("//*[@name='Take Notes']");
 	
-	By addNote = By.xpath("//*[@name='Enter Note']");
+	By addNote = By.xpath("//*[@name='Enter Take Notes']");
 	
 	By addNotePlusBtn = By.xpath("//*[@name='Double tap to Add Note']");
 	
@@ -62,15 +59,15 @@ public class Schedule extends BaseSetUp{
 	
 	By askAQuestion = By.xpath("//*[@name='Ask A Question']");
 	
-	By addQuestion = By.id("et_ask");
+	By addQuestion = By.xpath("//*[@name='Ask your question...']");
 	
-	By saveQuestion = By.id("tv_ask");
+	By saveQuestion = By.xpath("//*[@name='Double tap to ask your question']");
 	
 	By vote = By.xpath("//*[@name='Vote']");
 	
-	By addToAgenda = By.xpath("//*[@text='Add To Agenda']");
+	By addToAgenda = By.xpath("//*[@Name='Add To Agenda']");
 	
-	By speakersList = By.id("speaker_list_view_title");
+	By speakersList = By.xpath("//*[@name='Ask A Question']");
 	
 	By tracksTab = By.xpath("//*[@name='Tracks']");
 	
@@ -88,9 +85,9 @@ public class Schedule extends BaseSetUp{
 		
 	By myAgendaTab = By.xpath("//*[@name='My Agenda']");
 	
-	By select1stAgendaSesn = By.xpath("/XCUIElementTypeCell[1]");
+	By select1stAgendaSesn = By.xpath("//XCUIElementTypeCell[1]");
 	
-	By select2ndAgendaSesn = By.xpath("/XCUIElementTypeCell[2]");
+	By select2ndAgendaSesn = By.xpath("//XCUIElementTypeCell[2]");
 	
 	By clickOnResource = By.xpath("//*[@name='Resources']");
 	
@@ -109,6 +106,8 @@ public class Schedule extends BaseSetUp{
 	By cancelBtn = By.xpath("//*[@name='Cancel']");
 	
 	By doneBtn = By.xpath("//*[@name='Done']");
+	
+	By backBtn = By.xpath("//*[@name='Back']");
 	
 	
 
@@ -158,6 +157,18 @@ public class Schedule extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
+//		Thread.sleep(4000);
+		
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
 		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
@@ -186,7 +197,6 @@ public class Schedule extends BaseSetUp{
 	
 //	Checking Time Method
 	
-	@SuppressWarnings("rawtypes")
 	public Schedule time(String userName,String password,String Notes,String Question) throws InterruptedException{
 		
 		commonActivity(userName, password);
@@ -225,6 +235,20 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		try {
+			
+			System.out.println("Clicking On OK Button");
+
+			waitForClickabilityOf(okBtn);
+
+			driver.findElement(okBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+				
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking On Rate");
 
 		waitForClickabilityOf(rate);
@@ -241,6 +265,12 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
+		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking On Take Notes");
 
 		waitForClickabilityOf(takeNotes);
@@ -252,8 +282,6 @@ public class Schedule extends BaseSetUp{
 		System.out.println("Adding Notes");
 
 		waitForClickabilityOf(addNote);
-
-		driver.findElement(addNote).clear();
 		
 		driver.findElement(addNote).sendKeys(Notes);
 		
@@ -283,9 +311,11 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking Back Button");
+		System.out.println("Clicking Done Button");
 
-		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+		waitForClickabilityOf(doneBtn);
+
+		driver.findElement(doneBtn).click();
 		
 		Thread.sleep(2000);
 		
@@ -300,8 +330,6 @@ public class Schedule extends BaseSetUp{
 		System.out.println("Addding New Question");
 
 		waitForClickabilityOf(addQuestion);
-
-		driver.findElement(addQuestion).clear();
 		
 		driver.findElement(addQuestion).sendKeys(Question);
 		
@@ -315,11 +343,31 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking On Close Rate Option");
-		
-		boolean CancleBtn = driver.findElement(cancleRate).isDisplayed();
+		System.out.println("Clicking On OK Button");
 
-		driver.findElement(cancleRate).click();
+		waitForClickabilityOf(okBtn);
+
+		driver.findElement(okBtn).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Back Button");
+
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Back Button");
+
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
+		
+		Thread.sleep(2000);	
+		
+		boolean CancleBtn = driver.findElement(rate).isDisplayed();
 		
 		Thread.sleep(2000);		
 		
@@ -341,7 +389,6 @@ public class Schedule extends BaseSetUp{
 
 //	Checking Tracks Method
 	
-	@SuppressWarnings("rawtypes")
 	public Schedule tracks(String userName,String password,String Notes,String Question,String Option) throws InterruptedException{
 		
 		commonActivity(userName, password);
@@ -410,12 +457,18 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking On Ok Button to Add");
+		try {
+			
+			System.out.println("Clicking On Ok Button to Add");
 
-		waitForClickabilityOf(okBtn);
+			waitForClickabilityOf(okBtn);
 
-		driver.findElement(okBtn).click();
-		
+			driver.findElement(okBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+				
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking On Rate");
@@ -498,7 +551,9 @@ public class Schedule extends BaseSetUp{
 		
 		System.out.println("Clicking Back Button");
 
-		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
 		
 		Thread.sleep(2000);
 		
@@ -520,7 +575,9 @@ public class Schedule extends BaseSetUp{
 		
 		System.out.println("Clicking Back Button");
 
-		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
 		
 		try {
 			
@@ -560,11 +617,31 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking On Close Question Option");
-		
-		boolean CancleBtn = driver.findElement(cancleRate).isDisplayed();
+		System.out.println("Clicking On OK Button");
 
-		driver.findElement(cancleRate).click();
+		waitForClickabilityOf(okBtn);
+
+		driver.findElement(okBtn).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Back Button");
+
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Back Button");
+
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
+		
+		Thread.sleep(2000);	
+		
+		boolean CancleBtn = driver.findElement(rate).isDisplayed();
 			
 		Thread.sleep(2000);	
 		
@@ -585,7 +662,6 @@ public class Schedule extends BaseSetUp{
 	
 //	My Agenda Method
 	
-	@SuppressWarnings("rawtypes")
 	public Schedule myAgenda(String userName,String password,String Notes,String Question) throws InterruptedException{
 		
 		commonActivity(userName, password);
@@ -720,7 +796,9 @@ public class Schedule extends BaseSetUp{
 		
 		System.out.println("Clicking Back Button");
 
-		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
 		
 		Thread.sleep(2000);
 		
@@ -742,7 +820,9 @@ public class Schedule extends BaseSetUp{
 		
 		System.out.println("Clicking Back Button");
 
-		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
 		
 		try {
 			
@@ -782,11 +862,31 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking On Close Rate Option");
-		
-		boolean CancleBtn = driver.findElement(cancleRate).isDisplayed();
+		System.out.println("Clicking On OK Button");
 
-		driver.findElement(cancleRate).click();
+		waitForClickabilityOf(okBtn);
+
+		driver.findElement(okBtn).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Back Button");
+
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Back Button");
+
+		waitForClickabilityOf(backBtn);
+
+		driver.findElement(backBtn).click();
+		
+		Thread.sleep(2000);	
+		
+		boolean CancleBtn = driver.findElement(rate).isDisplayed();
 			
 		Thread.sleep(2000);	
 		

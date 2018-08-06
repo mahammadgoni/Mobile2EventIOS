@@ -27,6 +27,8 @@ public class LocationAndTiming extends BaseSetUp{
 		
 	By getDirection = By.xpath("//*[@name='Double tap to get direction']");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 	
 
 	public LocationAndTiming(WebDriver driver) {
@@ -74,7 +76,17 @@ public class LocationAndTiming extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

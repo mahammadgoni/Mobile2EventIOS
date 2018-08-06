@@ -31,6 +31,8 @@ public class Settings extends BaseSetUp{
 	
 	By refreshData = By.xpath("//*[@name='Refresh Data']");
 	
+	By backBtn = By.xpath("//*[@name='Back']");
+	
 	
 
 	public Settings(WebDriver driver) {
@@ -79,7 +81,17 @@ public class Settings extends BaseSetUp{
 //
 //		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		try {
+			
+			waitForClickabilityOf(backBtn);
+
+			driver.findElement(backBtn).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 
